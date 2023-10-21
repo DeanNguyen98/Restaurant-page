@@ -79,14 +79,8 @@ function createWebsite () {
     content.appendChild(createFooter());
     getActiveButton(document.querySelector(".button-nav"));
     loadHome();
-    document.addEventListener("DOMContentLoaded", function () {
-        const orderButton = document.getElementById("order");
-        orderButton.addEventListener("click", () => {
-            loadMenu();
-            getActiveButton(document.querySelector(".button-nav:nth-child(2)"));
-        });
-    });
     return content;
 }
 
 export default createWebsite;
+export {getActiveButton};

@@ -1,3 +1,6 @@
+import { loadMenu } from "./menu";
+import { getActiveButton } from "./Pageload";
+
 function createHome() {
     const mainHome = document.createElement("div");
     mainHome.id = "main-home";
@@ -10,6 +13,10 @@ function createHome() {
     const orderButton = document.createElement("button");
     orderButton.textContent = "Order Now";
     orderButton.id = "order";
+        orderButton.addEventListener("click", () => {
+            loadMenu();
+            getActiveButton(document.querySelector(".button-nav:nth-child(2)"));
+        });
     mainHome.appendChild(mainheading);
     mainHome.appendChild(para1);
     mainHome.appendChild(para2);
